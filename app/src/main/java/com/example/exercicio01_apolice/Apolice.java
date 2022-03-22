@@ -16,13 +16,15 @@ public class Apolice {
         this.sexo = sexo;
         this.valorAutomovel = valorAutomovel;
     }
-    public double calcularValor(){
+    public double calcularValor() {
         if (this.sexo == 'M' && this.idade <= 25)
-            return valorAutomovel * 10/100;
+            return valorAutomovel * 10 / 100;
         else if (this.sexo == 'M' && this.idade > 25)
-            return valorAutomovel * 5/100;
-        else
-            return valorAutomovel *2/100;
+            return valorAutomovel * 5 / 100;
+        else if (this.sexo == 'F') {
+            return valorAutomovel * 2 / 100;
+        }
+        return 0;
     }
 
     public int getNumero() {

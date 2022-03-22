@@ -16,6 +16,7 @@
         android:ems="10"
         android:hint="Número da Apólice"
         android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,6 +57,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:onClick="radioSexoClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idade">
@@ -64,12 +66,14 @@
             android:id="@+id/radioButtonMasculino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="radioSexoClick"
             android:text="Masculino" />
 
         <RadioButton
             android:id="@+id/radioButtonFeminino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="radioSexoClick"
             android:text="Feminino" />
     </RadioGroup>
 

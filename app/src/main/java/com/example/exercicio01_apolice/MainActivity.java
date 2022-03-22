@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    char sexo = 'n';
+    char sexo = 'M';
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calcularValorDaApolice(View view) {
+        EditText editTextNumero = (EditText) findViewById(R.id.numero);
+        int numero = Integer.parseInt(editTextNumero.getText().toString());
+
         EditText nome = findViewById(R.id.nome);
-        Apolice apolice = new Apolice(R.id.numero, nome.getText().toString(), R.id.idade, sexo, R.id.valorAutomovel);
+
+        EditText editTextIdade = (EditText) findViewById(R.id.idade);
+        int idade = Integer.parseInt(editTextIdade.getText().toString());
+
+        EditText editTextValorAutomovel = (EditText) findViewById(R.id.valorAutomovel);
+        double valorAutomovel = Double.parseDouble(editTextValorAutomovel.getText().toString());
+
+        System.out.println("valor antes de setar a apolice: " + valorAutomovel);
+
+        Apolice apolice = new Apolice(numero, nome.getText().toString(), idade, sexo, valorAutomovel);
         double valor = apolice.calcularValor();
 
         Toast.makeText(this, String.valueOf(valor), Toast.LENGTH_SHORT).show();
@@ -39,4 +51,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
 }
